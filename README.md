@@ -1,17 +1,17 @@
 # Seafile for armv/7/
 
-## wenn du deutsch bist findest du ein deutsches readme unter [deutsches readme](README_german.md)
+## 🇩🇪 wenn du deutsch bist findest du ein deutsches readme unter [deutsches readme](README_german.md)
 
-## ! Please note: This project was created for the Raspberry Pi 3b, but it may also work on other machines that use armv/7/, although it hasn't been tested on them yet!
+## ❗ Please note: This project was created for the Raspberry Pi 3b, but it may also work on other machines that use armv/7/, although it hasn't been tested on them yet ❗
 
 ### The project was created at the code+design camp https://code.design/
 
-### Tools used:<br/>
+### 🛠️ Tools used:<br/>
 -https://hub.docker.com/r/yobasystems/alpine-mariadb/<br/>
 -https://hub.docker.com/r/arm32v7/memcached/<br/>
 -https://hub.docker.com/r/franchetti/seafile-arm\
 
-## Quickstart
+## 🏁start
 After you have finished installing Raspberry Pi OS (https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi), install Docker (https://docs.docker.com/engine/install/)
 and create a folder in the Docker folder:
 ```
@@ -93,7 +93,7 @@ http://192.168.37.142:80
 ```
 Then enter your email address and password and you're connected.
 
-## troubleshooting
+## 🔧 troubleshooting
 
 ```
 Operation not permitted
