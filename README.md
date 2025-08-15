@@ -2,15 +2,15 @@
 
 ## ! Achtung das Projekt wurde Für den rasperry pi 3 b erstellt kann aber auch in auf anderen maschinen die armv/7/ verwenden funktionieren wurde dort aber noch nicht getest ! 
 
-### das projekt wurde bei den code+design camp erstellt (https://code.design/)
+### das projekt wurde bei den code+design camp erstellt https://code.design/
 
 verwendete tools:<br/>
 -https://hub.docker.com/r/yobasystems/alpine-mariadb/<br/>
 -https://hub.docker.com/r/arm32v7/memcached/<br/>
 -https://hub.docker.com/r/franchetti/seafile-arm\
 
-nachdem ihr rasperry pi os fertig instaliert habt ((https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi)) 
-instaliert ihr docker ((https://docs.docker.com/engine/install/))
+nachdem ihr rasperry pi os fertig instaliert habt (https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi)
+instaliert ihr docker (https://docs.docker.com/engine/install/)
 und erstellt im docker ordner einen ordner
 ```
 mkdir seafile
