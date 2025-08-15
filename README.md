@@ -11,7 +11,7 @@
 -https://hub.docker.com/r/arm32v7/memcached/<br/>
 -https://hub.docker.com/r/franchetti/seafile-arm\
 
-## 🏁start
+## 🏁 start
 After you have finished installing Raspberry Pi OS (https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi), install Docker (https://docs.docker.com/engine/install/)
 and create a folder in the Docker folder:
 ```
