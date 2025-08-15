@@ -22,7 +22,47 @@ nano docker-compose.yml
 ```
 und fügt in diesen den docker compose file ein 
 (denkt daran das man strg+shift+c/v zum kopieren bentzen muss)
-```
+```dockerfile
+services:
+  db:  # MariaDB-Datenbank für Seafile
+    image: yobasystems/alpine-mariadb
+    container_name: seafile-database
+    environment:
+      MYSQL_ROOT_PASSWORD: example_password
+      MYSQL_DATABASE: seafiledb
+      MYSQL_USER: seafileuser
+      MYSQL_PASSWORD: example_password
+    restart: always
+
+  memcache:  # Caching-Service
+    image: arm32v7/memcached
+    container_name: seafile-memcached
+    command:
+      - --conn-limit=1024
+      - --memory-limit=64
+      - --threads=4
+    restart: always
+
+  seafile:  # Hauptdienst (Web-UI & Dateisync)
+    image: franchetti/seafile-arm
+    container_name: seafile
+    ports:
+      - "8000:8000"  # Web-Interface
+      - "80:8000"    # HTTP
+      - "8082:8082"  # Dateiübertragung
+      - "443:443"    # HTTPS
+    volumes:
+      - /opt/seafile-data:/data  # Persistente Daten
+    environment:
+      MYSQL_HOST: db
+      MYSQL_ROOT_PASSWD: example_password
+      MYSQL_USER: seafileuser
+      MYSQL_USER_PASSWD: example_password
+      SEAFILE_ADMIN_EMAIL: example_email
+      SEAFILE_ADMIN_PASSWORD: example_password
+    depends_on:
+      - db
+      - memcache
 ```
 nun ersetzt ihr die example_password und die example@mail.com 
 danach entfernt ihr die komentare.
