@@ -5,8 +5,8 @@
 ### das projekt wurde bei den code+design camp erstellt (https://code.design/)
 
 verwendete tools:
--https://hub.docker.com/r/yobasystems/alpine-mariadb/\
--https://hub.docker.com/r/arm32v7/memcached/\
+-https://hub.docker.com/r/yobasystems/alpine-mariadb/
+-https://hub.docker.com/r/arm32v7/memcached/
 -https://hub.docker.com/r/franchetti/seafile-arm\
 
 nachdem ihr rasperry pi os fertig instaliert habt ((https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi)) 
