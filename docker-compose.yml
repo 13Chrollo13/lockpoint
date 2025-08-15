@@ -1,5 +1,5 @@
 services:
-  db:  # MariaDB-Datenbank für Seafile
+  db:  # MariaDB database for Seafile
     image: yobasystems/alpine-mariadb
     container_name: seafile-database
     environment:
@@ -9,7 +9,7 @@ services:
       MYSQL_PASSWORD: example_password
     restart: always
 
-  memcache:  # Caching-Service
+  memcache:  # Caching service
     image: arm32v7/memcached
     container_name: seafile-memcached
     command:
@@ -18,16 +18,16 @@ services:
       - --threads=4
     restart: always
 
-  seafile:  # Hauptdienst (Web-UI & Dateisync)
+  seafile:  # Main service (web UI & file sync)
     image: franchetti/seafile-arm
     container_name: seafile
     ports:
-      - "8000:8000"  # Web-Interface
+      - "8000:8000"  # Web interface
       - "80:8000"    # HTTP
-      - "8082:8082"  # Dateiübertragung
+      - "8082:8082"  # File transfer
       - "443:443"    # HTTPS
     volumes:
-      - /opt/seafile-data:/data  # Persistente Daten
+      - /opt/seafile-data:/data  # Persistent data
     environment:
       MYSQL_HOST: db
       MYSQL_ROOT_PASSWD: example_password
