@@ -1,0 +1,40 @@
+services:
+  db:
+    image: yobasystems/alpine-mariadb
+    container_name: seafile-database
+    environment:
+      MYSQL_ROOT_PASSWORD: example_password
+      MYSQL_DATABASE: seafiledb
+      MYSQL_USER: seafileuser
+      MYSQL_PASSWORD: example_password
+    restart: always
+
+  memcache:
+    image: arm32v7/memcached
+    container_name: seafile-memcached
+    command:
+      - --conn-limit=1024
+      - --memory-limit=64
+      - --threads=4
+    restart: always
+
+  seafile:
+    image: franchetti/seafile-arm
+    container_name: seafile
+    ports:
+      - "8000:8000"
+      - "80:8000"
+      - "8082:8082"
+      - "443:443"
+    volumes:
+      - /opt/seafile-data:/data
+    environment:
+      MYSQL_HOST: db
+      MYSQL_ROOT_PASSWD: example_password
+      MYSQL_USER: seafileuser
+      MYSQL_USER_PASSWD: example_password
+      SEAFILE_ADMIN_EMAIL: example_email
+      SEAFILE_ADMIN_PASSWORD: example_password
+    depends_on:
+      - db
+      - memcache
