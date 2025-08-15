@@ -1,6 +1,6 @@
 # Seafile for armv/7/
 
-##! Please note: This project was created for the Raspberry Pi 3b, but it may also work on other machines that use armv/7/, although it hasn't been tested on them yet!
+## ! Please note: This project was created for the Raspberry Pi 3b, but it may also work on other machines that use armv/7/, although it hasn't been tested on them yet!
 
 ### The project was created at the code+design camp https://code.design/
 
@@ -23,6 +23,46 @@ nano docker-compose.yml
 and insert the docker compose file into it
 (remember to use ctrl+shift+c/v to copy)
 ```dockerfile
+services:
+  db:  # MariaDB database for Seafile
+    image: yobasystems/alpine-mariadb
+    container_name: seafile-database
+    environment:
+      MYSQL_ROOT_PASSWORD: example_password
+      MYSQL_DATABASE: seafiledb
+      MYSQL_USER: seafileuser
+      MYSQL_PASSWORD: example_password
+    restart: always
+
+  memcache:  # Caching service
+    image: arm32v7/memcached
+    container_name: seafile-memcached
+    command:
+      - --conn-limit=1024
+      - --memory-limit=64
+      - --threads=4
+    restart: always
+
+  seafile:  # Main service (web UI & file sync)
+    image: franchetti/seafile-arm
+    container_name: seafile
+    ports:
+      - "8000:8000"  # Web interface
+      - "80:8000"    # HTTP
+      - "8082:8082"  # File transfer
+      - "443:443"    # HTTPS
+    volumes:
+      - /opt/seafile-data:/data  # Persistent data
+    environment:
+      MYSQL_HOST: db
+      MYSQL_ROOT_PASSWD: example_password
+      MYSQL_USER: seafileuser
+      MYSQL_USER_PASSWD: example_password
+      SEAFILE_ADMIN_EMAIL: example_email
+      SEAFILE_ADMIN_PASSWORD: example_password
+    depends_on:
+      - db
+      - memcache
 
 ```
 Now replace example_password and example@mail.com
