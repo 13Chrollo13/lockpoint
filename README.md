@@ -1,5 +1,7 @@
 # Seafile for armv/7/
 
+## wenn du deutsch bist findest du ein deutsches readme unter [deutsches readme](README_german.md)
+
 ## ! Please note: This project was created for the Raspberry Pi 3b, but it may also work on other machines that use armv/7/, although it hasn't been tested on them yet!
 
 ### The project was created at the code+design camp https://code.design/
