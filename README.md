@@ -29,7 +29,20 @@ danach entfernt ihr die komentare.
 Nun drückt ihr strg+x zurück zu gehen
 als nächstes gebt ihr in die command line diesen text ein
 ```
-docker compose
+docker-compose up
 ```
+## client instalation
+als erstes geht ihr zur seafile websit und ladet euch dort den client 
+runter welcher für euch passt (https://www.seafile.com/en/download/)
+und führt die datei aus. Im anschluss müssen wir die ip unseres host geräts
+heraus finden dafür tippt ihr ein 
+```
+
+```
+danach tippt ihr oben die adresse ein 
+```
+
+```
+
 
 
