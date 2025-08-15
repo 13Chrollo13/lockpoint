@@ -77,11 +77,18 @@ runter welcher für euch passt (https://www.seafile.com/en/download/)
 und führt die datei aus. Im anschluss müssen wir die ip unseres host geräts
 heraus finden dafür tippt ihr ein 
 ```
+ip a
+```
+die ip findet man meist als
+```
+inet 192.168.1.42/24
 
 ```
 danach tippt ihr oben die adresse ein 
 ```
-
+http://ip_adresse:portnumber
+#example:
+http://192.168.37.142:80
 ```
 dann gibt ihr noch eure email und euer passwort ein und seit verbunden
 
