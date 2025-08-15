@@ -100,7 +100,7 @@ wenn etwas mit diesen fehler kommt müsst ihr beim composen sudo dazugeben also:
 ```
 sudo docker-compose up
 ```
-
+<br/>
 
 ```
 docker services must be a mapping
