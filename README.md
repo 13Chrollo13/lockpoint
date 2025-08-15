@@ -1,8 +1,8 @@
-#Seafile for armv/7/
+# Seafile for armv/7/
 
-##! Achtung das Projekt wurde Für den rasperry pi 3 b erstellt kann aber auch in auf anderen maschinen die armv/7/ verwenden funktionieren wurde dort aber noch nit getest ! 
+## ! Achtung das Projekt wurde Für den rasperry pi 3 b erstellt kann aber auch in auf anderen maschinen die armv/7/ verwenden funktionieren wurde dort aber noch nit getest ! 
 
-###das projekt wurde bei den code+design camp erstellt #link einfügen
+### das projekt wurde bei den code+design camp erstellt #link einfügen
 
 verwendete tools:
 -(https://hub.docker.com/r/yobasystems/alpine-mariadb/)
