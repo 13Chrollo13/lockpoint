@@ -2,16 +2,16 @@
 
 ## ! Achtung das Projekt wurde Für den rasperry pi 3 b erstellt kann aber auch in auf anderen maschinen die armv/7/ verwenden funktionieren wurde dort aber noch nicht getest ! 
 
-### das projekt wurde bei den code+design camp erstellt #link einfügen
+### das projekt wurde bei den code+design camp erstellt (https://code.design/)
 
 verwendete tools:
 -(https://hub.docker.com/r/yobasystems/alpine-mariadb/)
 -(https://hub.docker.com/r/arm32v7/memcached/)
 -(https://hub.docker.com/r/franchetti/seafile-arm)
 
-nachdem ihr den rasperry pi instaliert habt ((https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi)) 
+nachdem ihr rasperry pi os fertig instaliert habt ((https://www.raspberrypi.com/documentation/computers/getting-started.html#setting-up-your-raspberry-pi)) 
 instaliert ihr docker ((https://docs.docker.com/engine/install/))
-erstellt ihr im docker ein ordner
+und erstellt im docker ordner einen ordner
 ```
 mkdir seafile
 cd seafile
@@ -43,6 +43,23 @@ danach tippt ihr oben die adresse ein
 ```
 
 ```
+dann gibt ihr noch eure email und euer passwort ein und seit verbunden
+
+## troubleshooting 
+
+```
+Operation not permitted
+```
+wenn etwas mit diesen fehler kommt müsst ihr beim composen sudo dazugeben also:
+```
+sudo docker-compose up
+```
 
 
+```
+docker services must be a mapping
+docker mapping values are not allowed in this context
+```
+wenn ihr diesen fehler bekommen habt sind ihrgendwo im docker-compose 
+noch leezeichen oder es ist nicht richtig eingerückt
 
