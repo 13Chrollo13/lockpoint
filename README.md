@@ -1,4 +1,5 @@
 # Seafile for armv/7/
+[Zusatzinfos](README_english.md)
 
 ## ! Achtung das Projekt wurde Für den rasperry pi 3 b erstellt kann aber auch in auf anderen maschinen die armv/7/ verwenden funktionieren wurde dort aber noch nicht getest ! 
 
